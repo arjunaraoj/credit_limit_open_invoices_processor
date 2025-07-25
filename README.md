@@ -1,9 +1,25 @@
-# Credit Limit Processor
-
+# Credit Limit and Open Invoices Processor
 This project automates the ingestion and transformation of customer credit limit data from CSV files into a SQL Server database.
 
-## Features
+credit_limit_open_invoices_processor-data-slackbot/
+│
+├── app/                         # Source code
+│   ├── app.py                   # Main Slack app entry point
+│   ├── chat_app.py              # Chat logic + QA engine
+│   └── __init__.py              # (optional for packaging)
+│
+├── data/                        # Input data
+│   ├── sales_data.csv
+│   ├── sales_data.json
+│   ├── sales_data.pdf
+│   └── sales_data_index/        # FAISS index (auto-created)
+│
+├── .env.example                 # Sample env config (never commit secrets)
+├── requirements.txt             # Python dependencies
+├── README.md                    # Project overview and instructions
+└── .gitignore                   # Files/folders to exclude from Git
 
+## Features
 - Reads multiple `*_Credit_*.csv` files from an input directory
 - Cleans and transforms data using pandas
 - Calculates and assigns unique `Credit_Limit_ID`
